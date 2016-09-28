@@ -17,7 +17,7 @@ public class Policia extends Personagem {
     public String toString() {
         return patente+" "+nome;
     }
-    
+
     
     
 }

@@ -35,6 +35,8 @@ public class Mundo {
             {new Lugar("churraqueira"), new Lugar("copa"), new Lugar("cozinha"), new Lugar("banheiro")},
             {new Lugar("piscina"), new Lugar("sauna"), new Lugar("quadra de tenis"), new Lugar("oficina")}
         };
+        
+        
         adicionaVizinho(0, 0, SUL,LESTE);
         adicionaVizinho(0, 1, SUL,LESTE,OESTE);
         adicionaVizinho(0, 2, LESTE,OESTE);

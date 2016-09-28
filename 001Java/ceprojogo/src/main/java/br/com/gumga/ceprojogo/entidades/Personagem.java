@@ -10,7 +10,7 @@ package br.com.gumga.ceprojogo.entidades;
  * @author munif
  */
 public class Personagem {
-    
+
     protected String nome;
     protected Integer energia;
     protected Lugar lugar;
@@ -19,6 +19,7 @@ public class Personagem {
         this.nome = nome;
         this.energia = energia;
         this.lugar = lugar;
+        lugar.getPersonagens().add(this);
     }
 
     public String getNome() {
@@ -44,8 +45,21 @@ public class Personagem {
     public void setLugar(Lugar lugar) {
         this.lugar = lugar;
     }
-    
-    
-    
-    
+
+    public void anda(Direcao direcao) {
+        if (!lugar.getVizinhos().containsKey(direcao)) {
+            throw new RuntimeException("Não é possível ir para " + direcao);
+        }
+        lugar.getPersonagens().remove(this);
+        lugar = lugar.getVizinhos().get(direcao);
+        lugar.getPersonagens().add(this);
+    }
+
+    public String descreve() {
+        StringBuilder toReturn = new StringBuilder();
+        toReturn.append("Ola " + this + "!\n");
+        toReturn.append(lugar);
+        return toReturn.toString();
+    }
+
 }
