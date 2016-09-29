@@ -1,6 +1,8 @@
 package br.com.gumga.ceprojogo.entidades;
 
 import static br.com.gumga.ceprojogo.entidades.Direcao.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -8,9 +10,11 @@ public class Mundo {
     private static final Mundo instancia = new Mundo();
     private Lugar[][] lugares;
     private Random random=new Random();
+    private final Map<String,Personagem> personagens;
     
     public Lugar lugarInicial(){
-        return lugares[random.nextInt(4)][random.nextInt(4)];
+        return lugares[0][0];
+        //return lugares[random.nextInt(4)][random.nextInt(4)];
     }
     
 
@@ -26,7 +30,14 @@ public class Mundo {
 //    }
     private Mundo() {
         criaMapa();
+        personagens=new HashMap<>();
     }
+
+    public Map<String, Personagem> getPersonagens() {
+        return personagens;
+    }
+    
+    
 
     private void criaMapa() {
         lugares = new Lugar[][]{

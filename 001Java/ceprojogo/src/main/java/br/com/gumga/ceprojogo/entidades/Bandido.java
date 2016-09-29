@@ -8,5 +8,12 @@ public class Bandido extends Personagem{
         super(nome, energia, lugar);
         this.faccao = faccao;
     }
+
+    @Override
+    public String toString() {
+        return nome+" "+faccao;
+    }
+    
+    
     
 }
