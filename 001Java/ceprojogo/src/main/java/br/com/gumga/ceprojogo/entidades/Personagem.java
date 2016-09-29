@@ -62,4 +62,10 @@ public class Personagem {
         return toReturn.toString();
     }
 
+    @Override
+    public String toString() {
+        return "Personagem{" + "nome=" + nome + ", energia=" + energia + ", lugar=" + lugar + '}';
+    }
+
+
 }
